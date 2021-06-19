@@ -1,0 +1,82 @@
+@import url(assets/styles.css);
+
+html, body {
+    box-sizing: border-box;
+}
+/* Navigation */
+nav {
+    display: grid;
+    width: inherit;
+    padding: 20px 30px;
+    grid-template-areas: "logo nav";
+    grid-template-columns: 200px auto;
+}
+nav div {
+    display: flex;
+}
+nav #nav_logo {
+    grid-area: logo;
+}
+#nav {
+    grid-area: nav;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+#nav a {
+    margin: 0px 30px;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: var(--regular);
+    color: var(--bold-text-color);
+}
+#hidden_nav {
+    display: none;
+    align-items: center;
+    justify-content: flex-end; 
+}
+/* End */
+
+/* Header Hero Page */
+
+
+/* End */
+
+@media only screen and (max-width: 728px) {
+    nav {
+        grid-template-areas: "logo"
+                             "nav";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-gap: 15px;
+    }
+    #nav_logo, #nav {
+        justify-content: center;
+    }
+    #nav a {
+        margin: 15px 30px;
+    }
+}
+@media only screen and (max-width: 528px) {
+    nav {
+        grid-template-areas: "logo hidden_nav"
+                                "nav nav";
+    }
+    #hidden_nav {
+        display: flex;
+        grid-area: hidden_nav;
+    }
+    #nav_logo, #nav {
+        justify-content: flex-start;
+    }
+    #nav a {
+        margin: 30px 60px 0px 0px;
+    }
+
+}
+@media only screen and (max-width: 350px) {
+    #nav a {
+        margin: 30px 30px 0px 0px;
+    }
+}

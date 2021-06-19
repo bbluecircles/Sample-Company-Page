@@ -22,6 +22,14 @@
     --regular-text-color: #585858;
     --bold-text-color: #1C1C1C;
     --aside-text-color: #969696;
+
+    /* Text Sizes */
+
+    --main-header: 48px;
+    --regular: 15px;
+    --sub-header: 36px;
+    --header-subtitles: 20px;
+    --small-headers: 24px;
 }
 
 @font-face {
