@@ -1,0 +1,41 @@
+:root {
+
+    /*
+        COLOR SCHEME
+    */
+
+    /* For buttons */
+    --bright-red: #FF8364;
+    /* For background */
+    --white: #FFFFFF;
+    /* For input boxes */
+    --light-gray: #F7F7F7;
+    /* For placeholders */
+    --gray: #D8D8D8;
+    /* For icons and text */
+    --dark-gray: #969696;
+
+    /* 
+        TEXT COLOR
+    */
+
+    --regular-text-color: #585858;
+    --bold-text-color: #1C1C1C;
+    --aside-text-color: #969696;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(fonts/Inter-Regular.ttf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: Inter;
+    src: url(fonts/Inter-Bold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: Inter;
+    src: url(fonts/Inter-SemiBold.ttf);
+    font-weight: 600;
+}
