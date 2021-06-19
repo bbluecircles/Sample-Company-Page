@@ -2,6 +2,22 @@
 
 html, body {
     box-sizing: border-box;
+    font-family: Inter;
+}
+h1 {
+    color: var(--bold-text-color);
+    font-size: var(--main-header);
+    text-align: center;
+    letter-spacing: -1.2px;
+    line-height: 60px;
+    margin: 0px 0px;
+}
+p {
+    color: var(--regular-text-color);
+    font-weight: var(--regular);
+    text-align: center;
+    line-height: 30px;
+    letter-spacing: -0.3px;
 }
 /* Navigation */
 nav {
@@ -39,8 +55,66 @@ nav #nav_logo {
 /* End */
 
 /* Header Hero Page */
-
-
+header {
+    width: 730px;
+    margin: 90px auto 0px auto;
+}
+.hero_headers {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+}
+.subscription {
+    display: grid;
+    width: max-content;
+    grid-template-areas: "input submit"
+                        "subtext subtext";
+    margin: 15px auto 15px auto;
+    grid-template-columns: 393px 130px;
+    grid-template-rows: 48px auto;
+    grid-gap: 15px;
+}
+.subscription_input {
+    display: block;
+    grid-area: input;
+    background: #f7f7ff;
+}
+.subscription_input input {
+    width: calc(100% - 15px);
+    height: 100%;
+    background: none;
+    border: none;
+    padding-left: 15px;
+    font-size: var(--regular);
+    opacity: 0.4;
+}
+.subscription_submit {
+    display: block;
+    grid-area: submit;
+}
+.subscription_submit button {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    background: var(--bright-red);
+    box-shadow: none;
+    color: var(--white);
+    font-weight: 600;
+    font-size: var(--regular);
+    border: none;
+}
+.subscription_subtext {
+    grid-area: subtext;
+    text-align: center;
+    margin-top: 15px;
+}
+.subscription_subtext span {
+    color: var(--dark-gray);
+    font-size: var(--regular);
+    line-height: 18px;
+    letter-spacing: -0.1px;
+}
 /* End */
 
 @media only screen and (max-width: 728px) {
