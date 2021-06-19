@@ -11,6 +11,13 @@ h1 {
     letter-spacing: -1.2px;
     line-height: 60px;
     margin: 0px 0px;
+    letter-spacing: -0.8px;
+}
+h2 {
+    color: var(--bold-text-color);
+    font-size: var(--sub-header);
+    line-height: 45px;
+    margin: 0px 0px;
 }
 p {
     color: var(--regular-text-color);
@@ -58,6 +65,10 @@ nav #nav_logo {
 header {
     width: 730px;
     margin: 60px auto 0px auto;
+}
+#header_image {
+    display: block;
+    margin: 30px auto 0 auto;
 }
 .hero_headers {
     display: flex;
@@ -117,9 +128,33 @@ header {
 }
 /* End */
 
+/* Section One */
+#section_one {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 90px 0px 90px 0px;
+    width: 100%;
+    height: auto;
+    border-top: 1px solid #DBDBDB;
+    border-bottom: 1px solid #DBDBDB;
+}
+#section_one h2 {
+    display: block;
+    width: 750px;
+    text-align: center;
+}
+/* End */
+
 @media only screen and (max-width: 850px) {
     header {
         width: calc(100% - 60px);
+    }
+    #section_one {
+        width: 100%;
+    }
+    #section_one h2 {
+        margin: 0px 30px 0px 30px;
     }
 }
  
@@ -142,6 +177,9 @@ header {
     }
     h1 {
         font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
     }
 }
 @media only screen and (max-width: 628px) {
@@ -179,6 +217,11 @@ header {
         grid-gap: 30px;
     }
 
+}
+@media only screen and (max-width: 380px) {
+    #header_image {
+        width: 100%;
+    }
 }
 @media only screen and (max-width: 350px) {
     #nav a {
