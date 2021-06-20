@@ -19,12 +19,18 @@ h2 {
     line-height: 45px;
     margin: 0px 0px;
 }
+h3 {
+    color: var(--bold-text-color);
+    font-size: var(--header-subtitles);
+    margin: 0px 0px;
+}
 p {
     color: var(--regular-text-color);
     font-weight: var(--regular);
     text-align: center;
     line-height: 30px;
     letter-spacing: -0.3px;
+    margin: 0px 0px
 }
 /* Navigation */
 nav {
@@ -75,6 +81,9 @@ header {
     flex-direction: column;
     align-items: flex-start;
     padding: 0;
+}
+.hero_headers p {
+    margin: 20px 0px 10px 0px;
 }
 .subscription {
     display: grid;
@@ -143,6 +152,42 @@ header {
     display: block;
     width: 750px;
     text-align: center;
+}
+/* End */
+
+/* Section Two */ 
+#section_two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 90px 0px 90px 0px;
+    border-top: 1px solid #DBDBDB;
+    border-bottom: 1px solid #DBDBDB;
+}
+.features-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.features-grid .features-grid-feature {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin: 0px 0px 30px 0px
+}
+.features-grid-feature h3 {
+    margin-top: 20px;
+}
+.features-grid-feature p {
+    text-align: left;
+    margin: 10px 0px 20px 0px
+}
+.features-grid span {
+    color: var(--bright-red);
+    font-weight: 600;
+    font-size: 15px;
 }
 /* End */
 
