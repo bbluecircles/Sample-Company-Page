@@ -160,7 +160,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 90px 0px 90px 0px;
+    padding: 90px 60px 90px 60px;
     border-top: 1px solid #DBDBDB;
     border-bottom: 1px solid #DBDBDB;
 }
@@ -169,7 +169,8 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    grid-row: 30px;
+    grid-column: 30px;
 }
 .features-grid .features-grid-feature {
     display: flex;
@@ -191,6 +192,64 @@ header {
 }
 /* End */
 
+/* Statistics */
+
+#section_three {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 60px 120px 60px;
+    border-top: 1px solid #DBDBDB;
+    border-bottom: 1px solid #DBDBDB;
+}
+.statistics-grid {
+    display: flex;
+    width: 1110px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+}
+.statistics-grid .stat {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin-bottom: 60px;
+}
+.stat h2 {
+    display: block;
+    width: 100%;
+    font-size: 64px;
+    margin-bottom: 30px;
+}
+.stat span {
+    display: block;
+    width: 100%;
+    font-size: var(--header-subtitles);
+}
+
+/* End */
+@media only screen and (max-width: 1246px) {
+    .statistics-grid .stat {
+        width: 290px;
+    }
+}
+@media only screen and (max-width: 1185px) {
+    .features-grid {
+        gap: 60px;
+    }
+}
+@media only screen and (max-width: 1066px) {
+    .statistics-grid .stat {
+        width: 260px;
+    }
+}
+@media only screen and (max-width: 895px) {
+    .features-grid {
+        justify-content: center;
+    }
+}
 @media only screen and (max-width: 850px) {
     header {
         width: calc(100% - 60px);
@@ -202,7 +261,15 @@ header {
         margin: 0px 30px 0px 30px;
     }
 }
- 
+@media only screen and (max-width: 685px) {
+    .statistics-grid {
+        flex-direction: column;
+        width: auto;
+    }
+    .statistics-grid .stat {
+        width: auto;
+    }
+}
 @media only screen and (max-width: 728px) {
     nav {
         grid-template-areas: "logo"
