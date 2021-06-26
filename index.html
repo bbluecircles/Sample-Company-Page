@@ -3,6 +3,59 @@
         <title>My Sample Company</title>
         <link rel="stylesheet" href="assets/styles.css" />
         <link rel="stylesheet" href="style.css" />
+        <script defer>
+            const data_interactivity = {
+                data_stats: {
+                    "active_merchants_stat": 23.4,
+                    "revenues_stat": 3.4,
+                    "downloads_stat": 873,
+                    "countries_stat": 87,
+                    "revenue_per_hour_stat": 58
+                },
+                section_three_element: null,
+                location: null,
+                stat_elements: null,
+
+                toggleAnimations: function() {
+                    for (let stat in this.data_stats) {
+                        this.addUp(this.data_stats[stat], stat.toString());
+                    }
+                },
+                addUp: function(value, element) {
+                    let speed = 200;
+
+                    if (value > 50 && value < 100) {
+                        speed = 50;
+                    }
+
+                    if (value > 100) {
+                        speed = 5;
+                    }
+
+                    let el = document.getElementById(element).children[0].getElementsByClassName('stat_value')[0];
+                    for (let i = 0; i < value; i+=0.1) {
+                        setTimeout(() => {
+                            el.innerHTML = i.toFixed(1).toString();
+                        }, speed * i);
+                    }
+                },
+                toggled: false
+            }
+            document.addEventListener("DOMContentLoaded", () => {
+                data_interactivity.section_three_element = document.getElementById('section_three');
+                data_interactivity.location = data_interactivity.section_three_element.offsetTop;
+                data_interactivity.stat_elements = Array.from(document.getElementsByClassName('stat'));
+            });
+            document.onscroll = () => {
+                if (window.scrollY >= data_interactivity.location - 200 && window.scrollY < data_interactivity.location + 100) {
+                    if (!data_interactivity.toggled) {
+                        data_interactivity.toggleAnimations();
+                        data_interactivity.toggled = true;
+                    }
+        
+                }
+            }
+        </script>
     </head>
     <body>
         <nav>
@@ -75,25 +128,25 @@
         </section>
         <section id="section_three">
             <section class="statistics-grid">
-                <article class="stat">
-                    <h2>23.4k</h2>
+                <article class="stat" id="active_merchants_stat">
+                    <h2><u class="stat_value">0</u><ins>k</ins></h2>
                     <span>Active Merchants</span>
                 </article>
-                <article class="stat">
-                    <h2>23.4k</h2>
-                    <span>Active Merchants</span>
+                <article class="stat" id="revenues_stat">
+                    <h2><u class="stat_value">0</u><ins>k</ins></h2>
+                    <span>Revenues in 2020</span>
                 </article>
-                <article class="stat">
-                    <h2>23.4k</h2>
-                    <span>Active Merchants</span>
+                <article class="stat" id="downloads_stat">
+                    <h2><u class="stat_value">0</u><ins>k</ins></h2>
+                    <span>Downloads</span>
                 </article>
-                <article class="stat">
-                    <h2>23.4k</h2>
-                    <span>Active Merchants</span>
+                <article class="stat" id="countries_stat">
+                    <h2><u class="stat_value">0</u><ins>+</ins></h2>
+                    <span>Countries</span>
                 </article>
-                <article class="stat">
-                    <h2>23.4k</h2>
-                    <span>Active Merchants</span>
+                <article class="stat" id="revenue_per_hour_stat">
+                    <h2><ins>$</ins><u class="stat_value">0</u></h2>
+                    <span>Revenue per Hour</span>
                 </article>
             </section>
         </section>
