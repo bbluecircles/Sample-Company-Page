@@ -32,6 +32,9 @@ p {
     letter-spacing: -0.3px;
     margin: 0px 0px
 }
+u, ins {
+    text-decoration: none;
+}
 /* Navigation */
 nav {
     display: grid;
@@ -71,10 +74,13 @@ nav #nav_logo {
 header {
     width: 730px;
     margin: 60px auto 0px auto;
+    overflow: hidden;
 }
 #header_image {
     display: block;
     margin: 30px auto 0 auto;
+    transform: translateY(200px);
+    transition: 0.5s all ease-out;
 }
 .hero_headers {
     display: flex;
@@ -299,6 +305,7 @@ header {
     padding: 0px 120px 0px 120px;
     border-top: 1px solid #DBDBDB;
     border-bottom: 1px solid #DBDBDB;
+    overflow: hidden;
 }
 #section_five section {
     display: grid;
@@ -313,6 +320,8 @@ header {
     display: block;
     margin-top: 120px;
     width: 100%;
+    transform: translateY(300px);
+    transition: 0.5s all ease-out;
 }
 #section_five div article {
     display: flex;
@@ -663,6 +672,7 @@ header {
     nav {
         grid-template-areas: "logo hidden_nav"
                                 "nav nav";
+
     }
     #hidden_nav {
         display: flex;
@@ -673,6 +683,9 @@ header {
     }
     #nav a {
         margin: 30px 60px 0px 0px;
+    }
+    #nav {
+        height: 0px;
     }
     .subscription {
         grid-gap: 30px;

@@ -3,6 +3,8 @@
         <title>My Sample Company</title>
         <link rel="stylesheet" href="assets/styles.css" />
         <link rel="stylesheet" href="style.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <script defer>
             const data_interactivity = {
                 data_stats: {
@@ -41,10 +43,37 @@
                 },
                 toggled: false
             }
+            const header_interactivity = {
+                image: '',
+                moveImage: function() {
+                    this.image.style = "transform: translateY(0px)";
+                },
+                toggled: true
+            }
+            const sec5_interactivity = {
+                image: '',
+                moveImage: function() {
+                    this.image.style = "transform: translateY(0px)";
+                },
+                location: 0,
+                toggled: true
+            }
             document.addEventListener("DOMContentLoaded", () => {
+                /* Stat Interactivity */
                 data_interactivity.section_three_element = document.getElementById('section_three');
                 data_interactivity.location = data_interactivity.section_three_element.offsetTop;
                 data_interactivity.stat_elements = Array.from(document.getElementsByClassName('stat'));
+
+                /* Header Interactivity */
+
+                header_interactivity.image = document.getElementById('header_image');
+                header_interactivity.moveImage();
+                header_interactivity.toggled = true;
+
+                /* Section 5 Interactivity */
+                sec5_interactivity.image = document.getElementById('five-phone');
+                sec5_interactivity.location = document.getElementById("section_five").offsetTop;
+                
             });
             document.onscroll = () => {
                 if (window.scrollY >= data_interactivity.location - 200 && window.scrollY < data_interactivity.location + 100) {
@@ -52,7 +81,10 @@
                         data_interactivity.toggleAnimations();
                         data_interactivity.toggled = true;
                     }
-        
+                }
+                if (window.scrollY >= sec5_interactivity.location + 150) {
+                    sec5_interactivity.moveImage();
+                    sec5_interactivity.toggled = true;
                 }
             }
         </script>
